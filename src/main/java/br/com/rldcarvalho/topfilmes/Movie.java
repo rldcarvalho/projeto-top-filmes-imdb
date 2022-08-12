@@ -3,8 +3,8 @@ package br.com.rldcarvalho.topfilmes;
 public class Movie {
     private String title;
     private String image;
-    private double imDbRating;
-    private int year;
+    private String imDbRating;
+    private String year;
 
     public String getTitle() {
         return title;
@@ -22,19 +22,19 @@ public class Movie {
         this.image = image;
     }
 
-    public double getImDbRating() {
+    public String getImDbRating() {
         return imDbRating;
     }
 
-    public void setImDbRating(double imDbRating) {
+    public void setImDbRating(String imDbRating) {
         this.imDbRating = imDbRating;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 }

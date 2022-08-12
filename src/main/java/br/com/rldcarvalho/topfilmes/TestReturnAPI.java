@@ -2,12 +2,14 @@ package br.com.rldcarvalho.topfilmes;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +49,23 @@ public class TestReturnAPI {
 
         List<String> imdbRatings = parseImdbRatings(moviesArray);
 
-        titles.forEach(System.out::println);
+        List<Movie> movies = new ArrayList<>();
+        for (int i = 0; i < moviesArray.length; i++) {
+            Movie movie = new Movie();
+            movie.setTitle(titles.get(i));
+            movie.setImage(urlImages.get(i));
+            movie.setYear(years.get(i));
+            movie.setImDbRating(imdbRatings.get(i));
+            movies.add(movie);
+        }
+
+        System.out.println(movies.get(0).getTitle());
+
+        PrintWriter ps = new PrintWriter("index.html", StandardCharsets.UTF_8);
+
+        HTMLGenerator.generator(movies, ps);
+
+        ps.close();
 
 
     }
