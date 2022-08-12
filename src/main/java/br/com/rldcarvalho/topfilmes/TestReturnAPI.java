@@ -2,17 +2,17 @@ package br.com.rldcarvalho.topfilmes;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.net.*;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class TestReturnAPI {
-    static String apiKey = "enter with api key";
+    static String apiKey = "k_4gidrkgy";
     static String apiPath = "https://imdb-api.com/pt_BR/API/Top250Movies/";
     static int sucessCode = 200;
 
