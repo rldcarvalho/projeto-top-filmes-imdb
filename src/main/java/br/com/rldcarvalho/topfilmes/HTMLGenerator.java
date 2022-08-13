@@ -5,11 +5,13 @@ import java.util.List;
 
 public class HTMLGenerator {
 
-    public void main(String[] args) {
+    private PrintWriter writer;
 
+    public HTMLGenerator(PrintWriter writer) {
+        this.writer = writer;
     }
 
-    public static void generator(List<Movie> moviesList, PrintWriter writer) {
+    public void generator(List<Movie> moviesList) {
         String head =
                 """
                 <head>
@@ -22,8 +24,8 @@ public class HTMLGenerator {
 
         String divTemplate =
                 """
-                        <div class=\"card text-white bg-dark mb-3\" style=\"width: 18rem;\">
-                            <h4 class=\"card-header\">%s</h4>
+                        <div class=\"card text-white bg-dark mb-3\" style=\"width: 12rem;\">
+                            <h5 class=\"card-header\">%s</h4>
                             <div class=\"card-body\">
                                 <img class=\"card-img\" src=\"%s\" alt=\"%s\">
                                 <p class=\"card-text mt-2\">Nota: %s - Ano: %s</p>
@@ -31,13 +33,14 @@ public class HTMLGenerator {
                         </div>
                         """;
 
-        writer.println(head);
-        writer.println("<main class=\"card-board\" style= \"background-color: black; margin: auto; display: flex; flex-wrap: wrap; \">");
+        this.writer.println(head);
+        this.writer.println("<main class=\"card-board\" style= \"background-color: black; margin: auto; display: flex; flex-wrap: wrap; \">");
         for (Movie movie: moviesList) {
-            writer.println(String.format(divTemplate, movie.getTitle(), movie.getImage(), movie.getTitle(), movie.getImDbRating(), movie.getYear()));
+            this.writer.println(String.format(divTemplate, movie.getTitle(), movie.getImage(), movie.getTitle(), movie.getImDbRating(), movie.getYear()));
         }
-        writer.println("</main>");
+        this.writer.println("</main>");
 
+        System.out.println("Arquivo HTML gerado com sucesso!");
     }
 
 }
