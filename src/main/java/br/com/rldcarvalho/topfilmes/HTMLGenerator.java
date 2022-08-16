@@ -11,7 +11,7 @@ public class HTMLGenerator {
         this.writer = writer;
     }
 
-    public void generator(List<Movie> moviesList) {
+    public void generator(List<? extends Content> contentList) {
         String head =
                 """
                 <head>
@@ -35,8 +35,8 @@ public class HTMLGenerator {
 
         this.writer.println(head);
         this.writer.println("<main class=\"card-board\" style= \"background-color: black; margin: auto; display: flex; flex-wrap: wrap; \">");
-        for (Movie movie: moviesList) {
-            this.writer.println(String.format(divTemplate, movie.getTitle(), movie.getImage(), movie.getTitle(), movie.getImDbRating(), movie.getYear()));
+        for (Content content: contentList) {
+            this.writer.println(String.format(divTemplate, content.getTitle(), content.getUrlImage(), content.getTitle(), content.getRating(), content.getYear()));
         }
         this.writer.println("</main>");
 

@@ -7,15 +7,15 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class ImdbApiClient {
+public class ImdbApiClient implements ApiClient {
 
     private String apiKey;
 
     public ImdbApiClient(String apiKey) {
         this.apiKey = apiKey;
     }
-
-    public String getBody() throws IOException, InterruptedException, URISyntaxException {
+    @Override
+    public String getBody() throws Exception {
         String apiPath = "https://imdb-api.com/pt_BR/API/Top250Movies/";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest

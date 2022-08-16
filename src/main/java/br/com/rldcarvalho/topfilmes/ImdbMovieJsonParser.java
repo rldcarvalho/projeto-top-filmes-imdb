@@ -3,13 +3,14 @@ package br.com.rldcarvalho.topfilmes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImdbMovieJsonParser {
+public class ImdbMovieJsonParser implements JsonParser{
     private String json;
 
     public ImdbMovieJsonParser(String json) {
         this.json = json;
     }
 
+    @Override
     public List<Movie> parse(){
         String jsonSubstring = extractStringBetweenSquareBracket(this.json);
 
@@ -27,9 +28,9 @@ public class ImdbMovieJsonParser {
         for (int i = 0; i < moviesArray.length; i++) {
             Movie movie = new Movie();
             movie.setTitle(titles.get(i));
-            movie.setImage(urlImages.get(i));
+            movie.setUrlImage(urlImages.get(i));
             movie.setYear(years.get(i));
-            movie.setImDbRating(imdbRatings.get(i));
+            movie.setRating(imdbRatings.get(i));
             movies.add(movie);
         }
 

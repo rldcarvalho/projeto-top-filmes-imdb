@@ -1,40 +1,42 @@
 package br.com.rldcarvalho.topfilmes;
 
-public class Movie {
+public class Movie implements Content{
     private String title;
     private String image;
     private String imDbRating;
     private String year;
 
+    @Override
     public String getTitle() {
         return title;
     }
-
+    @Override
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public String getImage() {
+    @Override
+    public String getUrlImage() {
         return image;
     }
-
-    public void setImage(String image) {
+    @Override
+    public void setUrlImage(String image) {
         this.image = image;
     }
-
-    public String getImDbRating() {
+    @Override
+    public String getRating() {
         return imDbRating;
     }
-
-    public void setImDbRating(String imDbRating) {
+    @Override
+    public void setRating(String imDbRating) {
         this.imDbRating = imDbRating;
     }
-
+    @Override
     public String getYear() {
         return year;
     }
-
+    @Override
     public void setYear(String year) {
         this.year = year;
     }
+
 }
