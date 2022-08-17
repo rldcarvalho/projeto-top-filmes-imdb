@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-public class TestReturnAPI {
+public class TestImdbAPI {
     static String apiKey = "enter with api key";
 
     public static void main(String[] args) throws Exception {
