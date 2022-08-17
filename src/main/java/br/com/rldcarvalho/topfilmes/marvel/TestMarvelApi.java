@@ -1,4 +1,7 @@
-package br.com.rldcarvalho.topfilmes;
+package br.com.rldcarvalho.topfilmes.marvel;
+
+import br.com.rldcarvalho.topfilmes.HTMLGenerator;
+import br.com.rldcarvalho.topfilmes.Serie;
 
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
@@ -6,8 +9,8 @@ import java.util.List;
 
 public class TestMarvelApi {
 
-    static String publicKey = "1b04efef4469c5b575752a19d241befb"; //"enter with public api key";
-    static String privateKey = "618f5539c5fd52ae9fa5d6c34606bbf73771f03e";//"enter with private api key";
+    static String publicKey = ""; //"enter with public api key";
+    static String privateKey = "";//"enter with private api key";
 
     public static void main(String[] args) throws Exception {
 

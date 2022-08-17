@@ -1,6 +1,6 @@
 package br.com.rldcarvalho.topfilmes;
 
-public class Movie implements Content{
+public class Movie implements Content, Comparable<Movie> {
     private String title;
     private String image;
     private String imDbRating;
@@ -39,4 +39,8 @@ public class Movie implements Content{
         this.year = year;
     }
 
+    @Override
+    public int compareTo(Movie other) {
+        return this.getRating().compareTo(other.getRating());
+    }
 }

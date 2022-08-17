@@ -1,9 +1,12 @@
-package br.com.rldcarvalho.topfilmes;
+package br.com.rldcarvalho.topfilmes.imdb;
+
+import br.com.rldcarvalho.topfilmes.JsonParser;
+import br.com.rldcarvalho.topfilmes.Movie;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImdbMovieJsonParser implements JsonParser{
+public class ImdbMovieJsonParser implements JsonParser {
     private String json;
 
     public ImdbMovieJsonParser(String json) {

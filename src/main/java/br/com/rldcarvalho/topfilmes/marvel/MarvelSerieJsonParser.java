@@ -1,9 +1,12 @@
-package br.com.rldcarvalho.topfilmes;
+package br.com.rldcarvalho.topfilmes.marvel;
+
+import br.com.rldcarvalho.topfilmes.JsonParser;
+import br.com.rldcarvalho.topfilmes.Serie;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MarvelSerieJsonParser implements JsonParser{
+public class MarvelSerieJsonParser implements JsonParser {
     private String json;
     public MarvelSerieJsonParser(String json) {
         this.json = json;

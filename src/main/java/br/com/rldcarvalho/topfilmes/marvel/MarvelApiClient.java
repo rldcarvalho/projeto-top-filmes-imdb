@@ -1,11 +1,14 @@
-package br.com.rldcarvalho.topfilmes;
+package br.com.rldcarvalho.topfilmes.marvel;
+
+import br.com.rldcarvalho.topfilmes.ApiClient;
+import br.com.rldcarvalho.topfilmes.MD5;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class MarvelApiClient implements ApiClient{
+public class MarvelApiClient implements ApiClient {
 
     private String privateKey;
     private String publicKey;
